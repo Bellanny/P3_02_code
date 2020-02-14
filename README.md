@@ -1,12 +1,12 @@
-EntreVoisins
+**EntreVoisins**
 
 EntreVoisins est le projet 3 du parcours prep’android d’OpenClassrooms.
 
-Introduction
+**Introduction**
 
 EntreVoisins est une startup, propriétaire d’une application qui permet à des personnes d’un même quartier de se rendre des petits services : garde d’animaux, petit bricolage, troc d’objets, cours particuliers
 
-Télécharger et importer EntreVoisins sur Android Studio
+**Télécharger et importer EntreVoisins sur Android Studio**
 
 Pour exécuter et compiler le code de l’application EntreVoisin, il faut aller sur GitHut via le lien https://github.com/Bellanny/P3_02_code puis cliquer sur clone or download.
 
@@ -56,3 +56,12 @@ Pour trouver les dossiers du code, aller dans l’onglet en haut à gauche nomm�
  Affichage sur équipement réel
  
  ![GitHub logo](/14.jpg)
+ 
+ **ACTIVER LE MODE DÉVELOPPEUR EN BREF
+Voici en quelques étapes comment activer le mode développeur sous Android.**
+
+**Accéder aux paramètres de l’appareil Android
+Aller dans les paramètres système
+Aller dans « À propos du téléphone »
+Tapoter 7 fois « numéro de build »
+Les options pour les développeurs apparaissent dans les paramètres système**
