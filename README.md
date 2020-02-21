@@ -18,14 +18,14 @@ Une petite fenêtre s’ouvre, cliquer sur download ZIP.
 
 Le fichier au format ZIP va télécharger. Ouvrir le ZIP avec Winrar ou 7Zip puis extraire le fichier sur le bureau ou tout autre lieu comme un dossier créer spécialement pour.
 
- ![GitHub logo](/3.jpg)
- 
  ![GitHub logo](/4.jpg)
+ 
+ ![GitHub logo](/5.jpg)
 
  
 Quand le dossier sera extrait, ouvrir Android Studio puis cliquer sur Open an existing Android Studio projetct.
 
-![GitHub logo](/5.jpg)
+![GitHub logo](/3.jpg)
  
 Chercher dans la liste le dossier où se trouve le dossier du code. Sur le bureau chercher destock puis le nom du projet et cliquer sur OK.
 
