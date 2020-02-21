@@ -1,7 +1,9 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
 
+import android.support.test.espresso.Espresso;
 import android.support.test.espresso.ViewInteraction;
+import android.support.test.espresso.contrib.ViewPagerActions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
@@ -30,6 +32,9 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withParent;
 import static com.openclassrooms.entrevoisins.utils.RecyclerViewItemCountAssertion.withItemCount;
 import static org.hamcrest.Matchers.allOf;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
+
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
@@ -57,41 +62,23 @@ public class ListFavoritesTest {
                         isDisplayed()));
         floatingActionButton.perform(click());
 
-        ViewInteraction appCompatImageButton = onView(
-                allOf(childAtPosition(
-                        allOf(withId(R.id.toolbar),
-                                childAtPosition(
-                                        withId(R.id.layout_detail),
-                                        1)),
-                        0),
-                        isDisplayed()));
-        appCompatImageButton.perform(click());
+        Espresso.pressBack();
 
-        ViewInteraction tabView = onView(
-                allOf(withContentDescription("Favorites"),
+        onView(withId(R.id.container)).perform(ViewPagerActions.scrollRight());
+
+        ViewInteraction textView = onView(
+                allOf(withId(R.id.item_list_name),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(R.id.tabs),
+                                        withId(R.id.list_neighbours),
                                         0),
                                 1),
                         isDisplayed()));
-        tabView.perform(click());
-
-        ViewInteraction viewPager = onView(
-                allOf(withId(R.id.container),
-                        childAtPosition(
-                                allOf(withId(R.id.main_content),
-                                        childAtPosition(
-                                                withId(android.R.id.content),
-                                                0)),
-                                1),
-                        isDisplayed()));
-        viewPager.perform(swipeLeft());
+        textView.check(matches(withText("Caroline")));
 
         // Then : the number of element is 1
-        onView(
-                (allOf(withId(R.id.list_neighbours),
-                        withParent(withId(R.id.container)),isDisplayed()))).check(withItemCount(1));
+        onView((allOf(withId(R.id.list_neighbours),
+                withParent(withId(R.id.container)),isDisplayed()))).check(withItemCount(1));
     }
 
     private static Matcher<View> childAtPosition(
